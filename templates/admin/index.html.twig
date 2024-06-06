@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello AdminController!{% endblock %}
+
+{% block body %}
+<div class="container mx-auto py-8 px-4">
+    <h1 class="font-bold text-2xl pb-6">Admin panel -> selection</h1>
+    <a type="submit"
+       href="/admin/event"
+            class="w-full bg-green-600 hover:bg-green-700 text-gray-100 font-bold py-2 px-4 rounded-lg">
+        Gérer les events
+    </a>
+</div>
+{% endblock %}
