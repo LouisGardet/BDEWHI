@@ -1,20 +1,144 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello HomeController!{% endblock %}
+{% block title %}Bienvenue sur le site du BDE WHI!{% endblock %}
 
 {% block body %}
 <style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f0f0f0;
+        margin: 0;
+        padding: 0;
+    }
+
+    .homepage-wrapper {
+        margin: 2em auto;
+        max-width: 1200px;
+        width: 95%;
+        font: 18px/1.5 sans-serif;
+        background: #ffffff;
+        padding: 20px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .homepage-wrapper h1, .homepage-wrapper h2 {
+        color: #007BFF;
+        text-align: center;
+    }
+
+    .homepage-wrapper p {
+        text-align: center;
+        color: #555;
+    }
+
+    .homepage-wrapper .features, .testimonials, .news, .team {
+        margin-top: 20px;
+    }
+
+    .features, .testimonials, .news, .team {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+    }
+
+    .feature, .testimonial, .news-item, .team-member {
+        background: #D3D3D3;
+        color: #ffffff;
+        padding: 20px;
+        width: 30%;
+        border-radius: 10px;
+        text-align: center;
+        transition: background 0.3s;
+        margin-bottom: 20px;
+    }
+
+    .feature:hover, .testimonial:hover, .news-item:hover, .team-member:hover {
+        background: #ADD8E6;
+    }
+
+    .feature img, .testimonial img, .news-item img, .team-member img {
+        max-width: 100px;
+        margin-bottom: 10px;
+    }
 </style>
 
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
+<div class="homepage-wrapper">
+    <h1>Bienvenue sur le site du BDE WHI</h1>
+    <p>Découvrez nos activités, événements et services pour les étudiants.</p>
 
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code>/Users/gaetan/development/Jetbrains/PhpStormProjects/bde-whi/src/Controller/HomeController.php</code></li>
-        <li>Your template at <code>/Users/gaetan/development/Jetbrains/PhpStormProjects/bde-whi/templates/home/index.html.twig</code></li>
-    </ul>
+    <div class="features">
+        <div class="feature">
+            <img src="path/to/your/events-icon.png" alt="Événements">
+            <h2>Événements</h2>
+            <p>Participez à nos événements excitants et faites de nouvelles rencontres.</p>
+        </div>
+        <div class="feature">
+            <img src="path/to/your/services-icon.png" alt="Services">
+            <h2>Services</h2>
+            <p>Profitez des services que nous offrons pour améliorer votre vie étudiante.</p>
+        </div>
+        <div class="feature">
+            <img src="path/to/your/community-icon.png" alt="Communauté">
+            <h2>Communauté</h2>
+            <p>Rejoignez notre communauté et engagez-vous dans diverses activités.</p>
+        </div>
+    </div>
+
+    <h2>Actualités</h2>
+    <div class="news">
+        <div class="news-item">
+            <img src="path/to/your/news-icon.png" alt="Actualité">
+            <h3>Actualité 1</h3>
+            <p>Les dernières nouvelles et événements à ne pas manquer.</p>
+        </div>
+        <div class="news-item">
+            <img src="path/to/your/news-icon.png" alt="Actualité">
+            <h3>Actualité 2</h3>
+            <p>Toutes les informations importantes pour les étudiants.</p>
+        </div>
+        <div class="news-item">
+            <img src="path/to/your/news-icon.png" alt="Actualité">
+            <h3>Actualité 3</h3>
+            <p>Restez informé des derniers développements et annonces.</p>
+        </div>
+    </div>
+
+    <h2>Témoignages</h2>
+    <div class="testimonials">
+        <div class="testimonial">
+            <img src="path/to/your/testimonial-icon.png" alt="Témoignage">
+            <h3>Étudiant 1</h3>
+            <p>"Le BDE WHI a transformé ma vie étudiante!"</p>
+        </div>
+        <div class="testimonial">
+            <img src="path/to/your/testimonial-icon.png" alt="Témoignage">
+            <h3>Étudiant 2</h3>
+            <p>"Les événements sont toujours incroyables et bien organisés."</p>
+        </div>
+        <div class="testimonial">
+            <img src="path/to/your/testimonial-icon.png" alt="Témoignage">
+            <h3>Étudiant 3</h3>
+            <p>"Une communauté accueillante et pleine de vie."</p>
+        </div>
+    </div>
+
+    <h2>Notre Équipe</h2>
+    <div class="team">
+        <div class="team-member">
+            <img src="path/to/your/team-member-icon.png" alt="Membre de l'équipe">
+            <h3>Nom 1</h3>
+            <p>Président</p>
+        </div>
+        <div class="team-member">
+            <img src="path/to/your/team-member-icon.png" alt="Membre de l'équipe">
+            <h3>Nom 2</h3>
+            <p>Vice-Président</p>
+        </div>
+        <div class="team-member">
+            <img src="path/to/your/team-member-icon.png" alt="Membre de l'équipe">
+            <h3>Nom 3</h3>
+            <p>Trésorier</p>
+        </div>
+    </div>
 </div>
 {% endblock %}
