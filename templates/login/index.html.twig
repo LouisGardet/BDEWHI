@@ -11,7 +11,7 @@
         {% endif %}
 
         <div class="flex justify-center">
-            {{ form_start(form, { 'attr': {'class': 'w-full max-w-sm'} }) }}
+            {{ form_start(form, { 'method': 'POST', 'attr': {'class': 'w-full max-w-sm'} }) }}
 
             <div class="mb-4">
                 {{ form_row(form.email, { 'attr': {'class': 'w-full p-2 border'} }) }}
