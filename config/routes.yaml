@@ -14,3 +14,7 @@ app_event:
 app_event_new:
     path: /event/new
     controller: App\Controller\EventController::new
+
+app_admin_event_show:
+  path: /admin/event/{id}
+  controller: App\Controller\AdminEventController::show
