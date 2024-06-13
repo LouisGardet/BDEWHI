@@ -1,11 +1,14 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}New Event{% endblock %}
+{% block title %}Create Event{% endblock %}
 
 {% block body %}
-    <h1>Create new Event</h1>
+    <div class="container mx-auto py-8 px-4">
+        <h1 class="font-bold text-2xl pb-6">Create new Event</h1>
 
-    {{ include('admin_event/_form.html.twig') }}
-
-    <a href="{{ path('app_admin_event_index') }}">back to list</a>
+        {{ form_start(form) }}
+            {{ form_widget(form) }}
+            <button class="mt-4 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" type="submit">Create</button>
+        {{ form_end(form) }}
+    </div>
 {% endblock %}

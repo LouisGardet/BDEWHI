@@ -28,7 +28,7 @@ class LoginController extends AbstractController
         $form->handleRequest($request);
 
         // Vérification et affichage des données soumises
-        if ($form->isSubmitted()) {
+        if ($form->isSubmitted() && $form->isValid()) {
             $data = $form->getData();
             dump($data); // Utiliser dump pour déboguer
         }

@@ -6,3 +6,11 @@ controllers:
 app_logout:
     path: /logout
     methods: GET
+
+app_event:
+    path: /event
+    controller: App\Controller\EventController::index
+
+app_event_new:
+    path: /event/new
+    controller: App\Controller\EventController::new

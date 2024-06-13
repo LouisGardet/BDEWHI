@@ -1,12 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Calendrier des événements{% endblock %}
+
+{% block body %}
+    <div class="container mx-auto py-8 px-4">
+        <div class="flex justify-between items-center mb-4">
+            <h1 class="font-bold text-2xl">Calendrier des événements</h1>
+            <a class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" href="{{ path('app_event_new') }}">Créer un événement</a>
+        </div>
+        <div id="calendar-holder"></div>
+    </div>
+{% endblock %}
+
 {% block javascripts %}
     <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.11/index.global.min.js"></script>
-
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const calendarEl = document.getElementById('calendar-holder');
 
             const calendar = new FullCalendar.Calendar(calendarEl, {
-                defaultView: 'dayGridMonth',
+                initialView: 'dayGridMonth',
                 editable: true,
                 eventSources: [
                     {
@@ -16,7 +29,7 @@
                             filters: JSON.stringify({})
                         },
                         failure: () => {
-                            // alert('There was an error while fetching FullCalendar!');
+                            alert('Il y a eu une erreur lors du chargement du calendrier.');
                         },
                     },
                 ],
@@ -31,13 +44,4 @@
             calendar.render();
         });
     </script>
-{% endblock %}
-{% extends 'base.html.twig' %}
-
-{% block title %}Hello EventController!{% endblock %}
-
-{% block body %}
-    <div class="container mx-auto py-8 px-4">
-        <div id="calendar-holder"></div>
-    </div>
 {% endblock %}

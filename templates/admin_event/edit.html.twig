@@ -3,11 +3,12 @@
 {% block title %}Edit Event{% endblock %}
 
 {% block body %}
-    <h1>Edit Event</h1>
+    <div class="container mx-auto py-8 px-4">
+        <h1 class="font-bold text-2xl pb-6">Edit Event</h1>
 
-    {{ include('admin_event/_form.html.twig', {'button_label': 'Update'}) }}
-
-    <a href="{{ path('app_admin_event_index') }}">back to list</a>
-
-    {{ include('admin_event/_delete_form.html.twig') }}
+        {{ form_start(form) }}
+        {{ form_widget(form) }}
+        <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" type="submit">Save</button>
+        {{ form_end(form) }}
+    </div>
 {% endblock %}
