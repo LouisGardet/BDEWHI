@@ -22,7 +22,7 @@
     }
 
     .homepage-wrapper h1, .homepage-wrapper h2 {
-        color: #007BFF;
+        color: #8B4513; /* Changed color to brown */
         text-align: center;
     }
 
@@ -43,21 +43,38 @@
 
     .feature, .testimonial, .news-item, .team-member {
         background: #D3D3D3;
-        color: #ffffff;
-        padding: 20px;
+        color: #333;
+        padding: 0;
         width: 30%;
         border-radius: 10px;
         text-align: center;
         transition: background 0.3s;
         margin-bottom: 20px;
+        overflow: hidden; /* Added to ensure the image fits well */
     }
 
     .feature:hover, .testimonial:hover, .news-item:hover, .team-member:hover {
-        background: #ADD8E6;
+        background: #B8860B; /* Changed hover color to a darker brown */
     }
 
     .feature img, .testimonial img, .news-item img, .team-member img {
-        max-width: 100px;
+        width: 100%;
+        height: auto;
+        border-bottom: 2px solid #fff;
+    }
+
+    .card-content {
+        padding: 20px;
+    }
+
+    .separator {
+        border-top: 2px solid #8B4513; /* Changed separator color to brown */
+        margin: 20px 0;
+    }
+
+    .section-title {
+        text-align: center;
+        color: #8B4513; /* Changed color to brown */
         margin-bottom: 10px;
     }
 </style>
@@ -68,76 +85,77 @@
 
     <div class="features">
         <div class="feature">
-            <img src="path/to/your/events-icon.png" alt="Événements">
-            <h2>Événements</h2>
-            <p>Participez à nos événements excitants et faites de nouvelles rencontres.</p>
+            <img src="{{ asset('images/our-friendship_1098-12614-(1)-1583334536.jpg') }}" alt="Événements">
+            <div class="card-content">
+                <h2>Événements</h2>
+                <p>Participez à nos événements excitants et faites de nouvelles rencontres grâce à nos partenaires.</p>
+            </div>
         </div>
         <div class="feature">
-            <img src="path/to/your/services-icon.png" alt="Services">
-            <h2>Services</h2>
-            <p>Profitez des services que nous offrons pour améliorer votre vie étudiante.</p>
+            <img src="{{ asset('images/our-friendship_1098-12614-(1)-1583334536.jpg') }}" alt="Services">
+            <div class="card-content">
+                <h2>Services</h2>
+                <p>Profitez des services que nous offrons pour améliorer votre vie étudiante.</p>
+            </div>
         </div>
         <div class="feature">
-            <img src="path/to/your/community-icon.png" alt="Communauté">
-            <h2>Communauté</h2>
-            <p>Rejoignez notre communauté et engagez-vous dans diverses activités.</p>
+            <img src="{{ asset('images/our-friendship_1098-12614-(1)-1583334536.jpg') }}" alt="Communauté">
+            <div class="card-content">
+                <h2>Communauté</h2>
+                <p>Rejoignez notre communauté et engagez-vous dans diverses activités.</p>
+            </div>
         </div>
     </div>
 
-    <h2>Actualités</h2>
+    <div class="separator"></div>
+    <h2 class="section-title">Actualités</h2>
     <div class="news">
         <div class="news-item">
-            <img src="path/to/your/news-icon.png" alt="Actualité">
-            <h3>Actualité 1</h3>
-            <p>Les dernières nouvelles et événements à ne pas manquer.</p>
+            <img src="{{ asset('images/lanochevoyages.png') }}" alt="Actualité">
+            <div class="card-content">
+                <h3>WES 2024</h3>
+                <p>Week-End ski en Andorre !! </p>
+            </div>
         </div>
         <div class="news-item">
-            <img src="path/to/your/news-icon.png" alt="Actualité">
-            <h3>Actualité 2</h3>
-            <p>Toutes les informations importantes pour les étudiants.</p>
+            <img src="{{ asset('images/soundstation.jpeg') }}" alt="Actualité">
+            <div class="card-content">
+                <h3>Notre QG</h3>
+                <p>Des soirées tous les jeudi soir</p>
+            </div>
         </div>
         <div class="news-item">
-            <img src="path/to/your/news-icon.png" alt="Actualité">
-            <h3>Actualité 3</h3>
-            <p>Restez informé des derniers développements et annonces.</p>
+            <img src="{{ asset('images/soireefinetude.jpg') }}" alt="Actualité">
+            <div class="card-content">
+                <h3>Soirée fin d'année</h3>
+                <p>De nombreuses annonces à suivre près 👀</p>
+            </div>
         </div>
     </div>
 
-    <h2>Témoignages</h2>
-    <div class="testimonials">
-        <div class="testimonial">
-            <img src="path/to/your/testimonial-icon.png" alt="Témoignage">
-            <h3>Étudiant 1</h3>
-            <p>"Le BDE WHI a transformé ma vie étudiante!"</p>
-        </div>
-        <div class="testimonial">
-            <img src="path/to/your/testimonial-icon.png" alt="Témoignage">
-            <h3>Étudiant 2</h3>
-            <p>"Les événements sont toujours incroyables et bien organisés."</p>
-        </div>
-        <div class="testimonial">
-            <img src="path/to/your/testimonial-icon.png" alt="Témoignage">
-            <h3>Étudiant 3</h3>
-            <p>"Une communauté accueillante et pleine de vie."</p>
-        </div>
-    </div>
-
-    <h2>Notre Équipe</h2>
+    <div class="separator"></div>
+    <h2 class="section-title">Notre Équipe</h2>
     <div class="team">
         <div class="team-member">
-            <img src="path/to/your/team-member-icon.png" alt="Membre de l'équipe">
-            <h3>Nom 1</h3>
-            <p>Président</p>
+            <img src="{{ asset('images/our-friendship_1098-12614-(1)-1583334536.jpg') }}" alt="Membre de l'équipe">
+            <div class="card-content">
+                <h3>Vadim SALUZZI</h3>
+                <p>Président</p>
+            </div>
         </div>
         <div class="team-member">
-            <img src="path/to/your/team-member-icon.png" alt="Membre de l'équipe">
-            <h3>Nom 2</h3>
-            <p>Vice-Président</p>
+            <img src="{{ asset('images/our-friendship_1098-12614-(1)-1583334536.jpg') }}" alt="Membre de l'équipe">
+            <div class="card-content">
+                <h3>Louis GARDET</h3>
+                <p>Vice-Président</p>
+            </div>
         </div>
         <div class="team-member">
-            <img src="path/to/your/team-member-icon.png" alt="Membre de l'équipe">
-            <h3>Nom 3</h3>
-            <p>Trésorier</p>
+            <img src="{{ asset('images/our-friendship_1098-12614-(1)-1583334536.jpg') }}" alt="Membre de l'équipe">
+            <div class="card-content">
+                <h3>HÉRAULT GAËTAN</h3>
+                <p>Trésorier</p>
+            </div>
         </div>
     </div>
 </div>

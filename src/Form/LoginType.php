@@ -17,14 +17,14 @@ class LoginType extends AbstractType
             ->add('email', EmailType::class, [
                 'constraints' => [
                     new NotBlank([
-                        'message' => 'Please enter your email',
+                        'message' => 'Veuillez renseigner votre mail',
                     ]),
                 ],
             ])
             ->add('password', PasswordType::class, [
                 'constraints' => [
                     new NotBlank([
-                        'message' => 'Please enter your password',
+                        'message' => 'Veuillez renseigner votre mot de passe',
                     ]),
                 ],
             ]);

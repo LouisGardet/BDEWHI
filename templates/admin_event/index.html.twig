@@ -4,9 +4,9 @@
 
 {% block body %}
     <div class="container mx-auto py-8 px-4">
-        <h1 class="font-bold text-2xl pb-6">Event Index</h1>
+        <h1 class="font-bold text-2xl pb-6">Événement index</h1>
 
-        <a class="bg-green-600 hover:bg-green-700 text-gray-100 font-bold py-2 px-4 rounded-lg" href="{{ path('app_admin_event_new') }}">Create new</a>
+        <a class="bg-green-600 hover:bg-green-700 text-gray-100 font-bold py-2 px-4 rounded-lg" href="{{ path('app_admin_event_new') }}">Créer un nouveau</a>
 
         <hr class="pb-6">
 
@@ -15,7 +15,7 @@
                 <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                     <tr>
                         <th scope="col" class="px-6 py-3">ID</th>
-                        <th scope="col" class="px-6 py-3">Name</th>
+                        <th scope="col" class="px-6 py-3">Nom</th>
                         <th scope="col" class="px-6 py-3">Date de début</th>
                         <th scope="col" class="px-6 py-3">Date de fin</th>
                         <th scope="col" class="px-6 py-3">Description</th>
@@ -31,17 +31,17 @@
                             <td class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">{{ event.dateEnd ? event.dateEnd|date('Y-m-d H:i') : '' }}</td>
                             <td class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">{{ event.description }}</td>
                             <td class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                <a class="hover:text-green-600" href="{{ path('app_admin_event_show', {'id': event.id}) }}">show</a>
-                                <a class="hover:text-red-600" href="{{ path('app_admin_event_edit', {'id': event.id}) }}">edit</a>
+                                <a class="hover:text-green-600" href="{{ path('app_admin_event_show', {'id': event.id}) }}">Voir</a>
+                                <a class="hover:text-red-600" href="{{ path('app_admin_event_edit', {'id': event.id}) }}">Modifier</a>
                                 {% if not event.isApproved %}
                                     <form method="post" action="{{ path('app_admin_event_approve', {'id': event.id}) }}" style="display: inline-block;">
                                         <input type="hidden" name="_token" value="{{ csrf_token('approve' ~ event.id) }}">
-                                        <button class="text-green-500" type="submit">Approve</button>
+                                        <button class="text-green-500" type="submit">Approuver</button>
                                     </form>
                                 {% endif %}
                                 <form method="post" action="{{ path('app_admin_event_delete', {'id': event.id}) }}" style="display: inline-block;">
                                     <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ event.id) }}">
-                                    <button class="text-red-500" type="submit">delete</button>
+                                    <button class="text-red-500" type="submit">Supprimer</button>
                                 </form>
                             </td>
                         </tr>

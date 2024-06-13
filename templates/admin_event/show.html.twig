@@ -3,7 +3,7 @@
 {% block title %}Event{% endblock %}
 
 {% block body %}
-    <h1>Event</h1>
+    <h1>Événement</h1>
 
     <table class="table">
         <tbody>
@@ -12,23 +12,23 @@
                 <td>{{ event.id }}</td>
             </tr>
             <tr>
-                <th>Name</th>
+                <th>Nom</th>
                 <td>{{ event.name }}</td>
             </tr>
             <tr>
-                <th>DateBegin</th>
+                <th>Date de début</th>
                 <td>{{ event.dateBegin ? event.dateBegin|date('Y-m-d') : '' }}</td>
             </tr>
             <tr>
-                <th>DateEnd</th>
+                <th>Date de fin</th>
                 <td>{{ event.dateEnd ? event.dateEnd|date('Y-m-d') : '' }}</td>
             </tr>
         </tbody>
     </table>
 
-    <a href="{{ path('app_admin_event_index') }}">back to list</a>
+    <a href="{{ path('app_admin_event_index') }}">Retour</a>
 
-    <a href="{{ path('app_admin_event_edit', {'id': event.id}) }}">edit</a>
+    <a href="{{ path('app_admin_event_edit', {'id': event.id}) }}">Éditer</a>
 
     {{ include('admin_event/_delete_form.html.twig') }}
 {% endblock %}

@@ -5,21 +5,21 @@
 {% block body %}
     <div class="container mx-auto py-8 px-4">
         <div class="flex justify-between pb-6">
-            <h1 class="font-bold text-2xl">Admin Dashboard</h1>
+            <h1 class="font-bold text-2xl">Paneau de bord - Admin</h1>
         </div>
         
         <hr class="pb-6">
 
-        <h2 class="font-bold text-xl pb-4">Events</h2>
+        <h2 class="font-bold text-xl pb-4">Événements</h2>
         <div class="relative overflow-x-auto">
             <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
                 <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                     <tr>
                         <th scope="col" class="px-6 py-3">ID</th>
-                        <th scope="col" class="px-6 py-3">Name</th>
+                        <th scope="col" class="px-6 py-3">Nom</th>
                         <th scope="col" class="px-6 py-3">Date de début</th>
                         <th scope="col" class="px-6 py-3">Date de fin</th>
-                        <th scope="col" class="px-6 py-3">actions</th>
+                        <th scope="col" class="px-6 py-3">Actions</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -30,9 +30,9 @@
                             <td class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">{{ event.dateBegin ? event.dateBegin|date('Y-m-d') : '' }}</td>
                             <td class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">{{ event.dateEnd ? event.dateEnd|date('Y-m-d') : '' }}</td>
                             <td class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                <a class="hover:text-green-600" href="{{ path('app_admin_event_show', {'id': event.id}) }}">show</a>
+                                <a class="hover:text-green-600" href="{{ path('app_admin_event_show', {'id': event.id}) }}">Voir</a>
                                 {% if is_granted('ROLE_ADMIN') %}
-                                    <a class="hover:text-red-600" href="{{ path('app_admin_event_edit', {'id': event.id}) }}">edit</a>
+                                    <a class="hover:text-red-600" href="{{ path('app_admin_event_edit', {'id': event.id}) }}">Éditer</a>
                                 {% endif %}
                             </td>
                         </tr>
@@ -45,7 +45,7 @@
             </table>
         </div>
 
-        <h2 class="font-bold text-xl pb-4 pt-6">Users</h2>
+        <h2 class="font-bold text-xl pb-4 pt-6">Utilisateurs</h2>
         <div class="relative overflow-x-auto">
             <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
                 <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
